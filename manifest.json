@@ -1,6 +1,6 @@
 {
   "manifest_version": 3,
-  "name": "Overlay Extension",
+  "name": "Coding Tracker",
   "version": "1.0",
   "author": "Karthikeyan N",
   "description": "Adds an overlay to the page",
@@ -15,7 +15,12 @@
   "content_scripts": [
     {
       "matches": ["https://leetcode.com/problems/*"],
-      "js": ["format_time.js","button.js","xlsx.full.min.js","idb.js", "Leetcode.js","Leetcode_Getvalue.js","put_value.js"],
+      "js": ["Celebration.js","format_time.js","button.js","xlsx.full.min.js","idb.js", "Leetcode.js","Leetcode_Getvalue.js","put_value.js"],
+      "css": ["style.css"]
+    },
+    {
+      "matches": ["https://www.geeksforgeeks.org/problems/*"],
+      "js": ["Celebration.js","format_time.js","button.js","xlsx.full.min.js","idb.js", "GeeksforGeeks.js","put_value.js","GeeksforGeeks_Getvalue.js"],
       "css": ["style.css"]
     }
   ]

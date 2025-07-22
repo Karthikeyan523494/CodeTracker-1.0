@@ -15,17 +15,17 @@ function submitted(time) {
   const targetNode = document.body;
 
   const observer = new MutationObserver(() => {
-    const resultSpan = document.querySelector('span[data-e2e-locator="submission-result"]');
+    const resultSpan = document.querySelector('.problems_problem_solved_successfully__Zb4yG');
     if (resultSpan) {
       const status = resultSpan.textContent.trim();
       console.log("Current status:", status);
 
-      if (status === "Accepted") {
+      if (status === "Problem Solved SuccessfullySuggest Feedback") {
         console.log("✅ Submission Accepted!");
         // Optional: Trigger your logic
         // alert("Accepted!");
         GotAccepted(time);
-        Celebrate();
+        // Celebrate();
         observer.disconnect(); // Stop observing if needed
       } else {
         console.log("❌ Submission not accepted yet:", status);
@@ -59,8 +59,8 @@ function submitted(time) {
     }
   });
   function bindToEditableDiv() {
-    
-    const editable = document.querySelector('.monaco-editor textarea.inputarea');
+
+    const editable = document.querySelector('.problems_editor_content__zXHUI');
 
     if (editable) {
       editable.addEventListener('keydown', () => {
@@ -69,13 +69,13 @@ function submitted(time) {
           startTimer();
         }
       });
-      console.log("✅ Typing timer bound to Monaco editor.");
+      console.log("✅ Editable div listener added.");
     } else {
       setTimeout(bindToEditableDiv, 1000); // Retry until it's loaded
     }
   }
   function bindToSubmitButton() {
-    const submitBtn = document.querySelector('[data-e2e-locator="console-submit-button"]');
+    const submitBtn = document.querySelector('.ui.button.problems_submit_button__6QoNQ');
 
     if (submitBtn) {
       submitBtn.addEventListener('click', () => {

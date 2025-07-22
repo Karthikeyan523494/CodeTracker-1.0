@@ -5,7 +5,6 @@
   right: 350px;
   width: 30px;
   height: 30px;
-  background-image: URL("asserts/icon.png"); 
   background-size: cover;
   background-position: center;
   background-color: white; 
@@ -19,6 +18,5 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 #overlay-button:hover {
-  background-image: url("/asserts/icon.png");
   cursor: pointer;
 }
